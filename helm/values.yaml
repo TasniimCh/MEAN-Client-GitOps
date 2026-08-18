@@ -2,8 +2,8 @@
 # Managed by the Platform Pipeline GitOps update provider.
 
 image:
-  repository: docker.io/tasniim/mean-client
-  digest: sha256:0000000000000000000000000000000000000000000000000000000000000000
+  repository: docker.io/tasniimch/mean-client
+  digest: sha256:sha256:57987f796f52e7065391e3c28929d57f86e7b8847493afee2aca88525ac5fd5d
 
 replicaCount: 1
 
