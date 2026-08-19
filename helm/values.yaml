@@ -1,12 +1,7 @@
-# DEV environment configuration
-# Managed by the Platform Pipeline GitOps update provider.
-
 image:
-  repository: docker.io/tasniimch/mean-client
-  digest: sha256:sha256:57987f796f52e7065391e3c28929d57f86e7b8847493afee2aca88525ac5fd5d
-
+  repository: tasniimch/mean-client
+  digest: sha256:76551f82584a7d24820a3fc459b756a6ab2d47eb978dbcde7795fbae5dcbd527
 replicaCount: 1
-
 service:
   type: ClusterIP
   port: 80
