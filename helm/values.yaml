@@ -1,7 +1,13 @@
+replicaCount: 1
+
 image:
   repository: tasniimch/mean-client
-  digest: sha256:065c773bacee8110c7e62724bb34e8ba10f616b14163a6a24e49913d12efab27
-replicaCount: 1
+  digest: "sha256:065c773bacee8110c7e62724bb34e8ba10f616b14163a6a24e49913d12efab27"
+  pullPolicy: IfNotPresent
+
 service:
   type: ClusterIP
   port: 80
+  targetPort: 80
+
+resources: {}
