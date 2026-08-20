@@ -18,35 +18,35 @@ spec:
 
     spec:
       containers:
-        - name: application
+      - name: application
 
-          image: >-
-            {{- if .Values.image.digest }}
-            {{ .Values.image.repository }}@{{ .Values.image.digest }}
-            {{- else }}
-            {{ .Values.image.repository }}
-            {{- end }}
+        image: >-
+          {{- if .Values.image.digest }}
+          {{ .Values.image.repository }}@{{ .Values.image.digest }}
+          {{- else }}
+          {{ .Values.image.repository }}
+          {{- end }}
 
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
 
-          ports:
-            - name: http
-              containerPort: {{ .Values.service.targetPort }}
-              protocol: TCP
+        ports:
+          - name: http
+            containerPort: {{ .Values.service.targetPort }}
+            protocol: TCP
 
-          readinessProbe:
-            httpGet:
-              path: /health
-              port: http
-            initialDelaySeconds: 5
-            periodSeconds: 5
+        readinessProbe:
+          httpGet:
+            path: /
+            port: http
+          initialDelaySeconds: 5
+          periodSeconds: 5
 
-          livenessProbe:
-            httpGet:
-              path: /health
-              port: http
-            initialDelaySeconds: 10
-            periodSeconds: 10
+        livenessProbe:
+          httpGet:
+            path: /
+            port: http
+          initialDelaySeconds: 10
+          periodSeconds: 10
 
-          resources:
-            {{- toYaml .Values.resources | nindent 12 }}
+        resources:
+          {{- toYaml .Values.resources | nindent 12 }}
