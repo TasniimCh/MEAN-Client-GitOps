@@ -1,7 +1,7 @@
 replicaCount: 1
 image:
   repository: tasniimch/mean-client
-  digest: sha256:b9d0212cee6c6c5d069e38dec13b41fc063927621616ecd35f6363a3e196cc92
+  digest: sha256:c898708cb21f2bfdd924ec374de2fb1b20e341ad2596d8d7cd849f21fd9bd721
   pullPolicy: IfNotPresent
 service:
   type: ClusterIP
